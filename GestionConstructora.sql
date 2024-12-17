@@ -1,3 +1,6 @@
+CREATE DATABASE GestionConstructora;
+GO
+
 CREATE TABLE Categorias (
     CategoriaID INT IDENTITY(1,1) PRIMARY KEY,
     Nombre NVARCHAR(50) UNIQUE NOT NULL
@@ -5,7 +8,7 @@ CREATE TABLE Categorias (
 
 CREATE TABLE Direcciones (
     DireccionID INT IDENTITY(1,1) PRIMARY KEY,
-    Provincia NVARCHAR(50) DEFAULT 'San José',
+    Provincia NVARCHAR(50) DEFAULT 'San JosÃ©',
     Canton NVARCHAR(50) NULL,
     Distrito NVARCHAR(50) NULL,
     OtrasSenas NVARCHAR(100) NULL
@@ -48,18 +51,18 @@ CREATE TABLE Contactos (
     Fecha DATETIME NOT NULL
 );
 
-INSERT INTO Categorias (Nombre) VALUES ('Construcción Residencial');
-INSERT INTO Categorias (Nombre) VALUES ('Construcción Comercial');
+INSERT INTO Categorias (Nombre) VALUES ('ConstrucciÃ³n Residencial');
+INSERT INTO Categorias (Nombre) VALUES ('ConstrucciÃ³n Comercial');
 INSERT INTO Categorias (Nombre) VALUES ('Infraestructura');
 
 INSERT INTO Direcciones (Provincia, Canton, Distrito, OtrasSenAs)
-VALUES ('San José', 'Central', 'Hospital', 'Avenida Central, Calle 1');
+VALUES ('San JosÃ©', 'Central', 'Hospital', 'Avenida Central, Calle 1');
 
 INSERT INTO Direcciones (Provincia, Canton, Distrito, OtrasSenAs)
 VALUES ('Cartago', 'El Guarco', 'Tejar', 'Calle 21, Casa Amarilla');
 
 INSERT INTO Direcciones (Provincia, Canton, Distrito, OtrasSenAs)
-VALUES ('Alajuela', 'Alajuela', 'San José', 'Frente al parque central');
+VALUES ('Alajuela', 'Alajuela', 'San JosÃ©', 'Frente al parque central');
 
 INSERT INTO Direcciones (Provincia, Canton, Distrito, OtrasSenAs)
 VALUES ('Heredia', 'Heredia', 'San Francisco', 'Del centro comercial 300m norte');
@@ -68,19 +71,19 @@ INSERT INTO Direcciones (Provincia, Canton, Distrito, OtrasSenAs)
 VALUES ('Guanacaste', 'Liberia', 'Liberia', 'A 500m del aeropuerto');
 
 INSERT INTO Proyectos (CodigoProyecto, Nombre, FechaInicio, FechaFinalizacion)
-VALUES ('PROY-001', 'Construcción de Edificio Central', '2024-04-01', '2024-10-01');
+VALUES ('PROY-001', 'ConstrucciÃ³n de Edificio Central', '2024-04-01', '2024-10-01');
 
 INSERT INTO Proyectos (CodigoProyecto, Nombre, FechaInicio, FechaFinalizacion)
 VALUES ('PROY-002', 'Desarrollo de Condominio Residencial', '2024-05-01', '2024-11-01');
 
 INSERT INTO Proyectos (CodigoProyecto, Nombre, FechaInicio, FechaFinalizacion)
-VALUES ('PROY-003', 'Ampliación de Infraestructura Vial', '2024-06-15', NULL);
+VALUES ('PROY-003', 'AmpliaciÃ³n de Infraestructura Vial', '2024-06-15', NULL);
 
 INSERT INTO Proyectos (CodigoProyecto, Nombre, FechaInicio, FechaFinalizacion)
-VALUES ('PROY-004', 'Renovación de Oficinas Corporativas', '2024-07-01', '2024-12-31');
+VALUES ('PROY-004', 'RenovaciÃ³n de Oficinas Corporativas', '2024-07-01', '2024-12-31');
 
 INSERT INTO Proyectos (CodigoProyecto, Nombre, FechaInicio, FechaFinalizacion)
-VALUES ('PROY-005', 'Construcción de Planta Industrial', '2024-03-20', NULL);
+VALUES ('PROY-005', 'ConstrucciÃ³n de Planta Industrial', '2024-03-20', NULL);
 
 INSERT INTO Empleados (Carnet, Nombre, Apellido1, Apellido2, FechaNacimiento, DireccionID, Telefono, Correo, Salario, CategoriaID)
 VALUES ('C001', 'Juan', 'Perez', 'Lopez', '1990-05-15', 1, '2222-1111', 'juan.perez@empresa.com', 300000, 1);
@@ -101,7 +104,7 @@ INSERT INTO Contactos (Nombre, Correo, Mensaje, Fecha)
 VALUES ('Pedro Alvarado', 'pedro.alvarado@cliente.com', 'Consulta sobre el proyecto de infraestructura.', GETDATE());
 
 INSERT INTO Contactos (Nombre, Correo, Mensaje, Fecha)
-VALUES ('Laura Hernandez', 'laura.hernandez@cliente.com', 'Requerimiento de información sobre edificios comerciales.', GETDATE());
+VALUES ('Laura Hernandez', 'laura.hernandez@cliente.com', 'Requerimiento de informaciÃ³n sobre edificios comerciales.', GETDATE());
 
 INSERT INTO Asignaciones (EmpleadoID, ProyectoID, FechaAsignacion)
 VALUES (10, 1, '2024-04-01'); -- Juan asignado al Proyecto 1

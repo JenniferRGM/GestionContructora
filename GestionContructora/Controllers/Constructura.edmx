@@ -27,7 +27,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Correo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Correo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Mensaje" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
         </EntityType>
@@ -281,7 +281,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Correo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Mensaje" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>

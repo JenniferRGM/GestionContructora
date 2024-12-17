@@ -31,7 +31,7 @@ namespace GestionContructora.Controllers
         public virtual DbSet<Direcciones> Direcciones { get; set; }
         public virtual DbSet<Empleados> Empleados { get; set; }
         public virtual DbSet<Proyectos> Proyectos { get; set; }
-        public virtual DbSet<Contactos> Contactos { get; set; }
-        public virtual DbSet<ContactForm> ContactForm { get; set; }
+        public virtual DbSet<ContactForm> Contactos { get; set; }
+
     }
 }

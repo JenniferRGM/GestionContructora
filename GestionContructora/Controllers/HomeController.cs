@@ -39,7 +39,7 @@ namespace GestionConstructora.Controllers
                         Fecha = DateTime.Now
                     };
 
-                    db.ContactForm.Add(contacto); 
+                    db.Contactos.Add(contacto);
                     db.SaveChanges();             
 
                     // Configurar el correo electrónico

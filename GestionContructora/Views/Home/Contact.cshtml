@@ -1,19 +1,59 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model GestionContructora.Models.ContactForm
+
+@{
+    ViewBag.Title = "Contacto";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Contáctanos</h1>
+        <p class="lead">Estamos aquí para ayudarte. Comunícate con nosotros para cualquier consulta.</p>
+    </div>
 
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Información de Contacto</h3>
+            <p><strong>Dirección:</strong> Avenida Central, San José, Costa Rica</p>
+            <p><strong>Teléfono:</strong> +506 2222-5678</p>
+            <p><strong>Correo Electrónico:</strong> <a href="mailto:soporte@constructora.com">soporte@constructora.com</a></p>
+            <p><strong>Horario de Atención:</strong> Lunes a Viernes, 8:00 AM - 5:00 PM</p>
+        </div>
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-</main>
+        <div class="col-md-6">
+            <h3>Envíanos un Mensaje</h3>
+
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-success">@ViewBag.Message</div>
+            }
+            else if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            }
+
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+            {
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.Nombre, "Nombre", new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Tu nombre completo" })
+                    @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.Correo, "Correo Electrónico", new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Correo, new { @class = "form-control", placeholder = "tucorreo@ejemplo.com" })
+                    @Html.ValidationMessageFor(m => m.Correo, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.Mensaje, "Mensaje", new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.Mensaje, 4, 40, new { @class = "form-control", placeholder = "Escribe tu mensaje aquí" })
+                    @Html.ValidationMessageFor(m => m.Mensaje, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+}

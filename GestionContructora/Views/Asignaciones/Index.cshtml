@@ -1,0 +1,46 @@
+﻿@model IEnumerable<GestionContructora.Controllers.Asignaciones>
+
+@{
+    ViewBag.Title = "Pagina principal de Asignaciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pagina principal de Asignaciones</h2>
+
+<p>
+    @Html.ActionLink("Crear Nueva Asignación", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaAsignacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados.Carnet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proyectos.CodigoProyecto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaAsignacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados.Carnet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proyectos.CodigoProyecto)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.AsignacionID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.AsignacionID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.AsignacionID })
+        </td>
+    </tr>
+}
+
+</table>

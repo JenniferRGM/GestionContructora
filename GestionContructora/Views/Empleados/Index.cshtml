@@ -1,0 +1,88 @@
+﻿@model IEnumerable<GestionContructora.Controllers.Empleados>
+
+@{
+    ViewBag.Title = "Página Principal de Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Página Principal de Empleados</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo Empleado", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Carnet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categorias.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direcciones.Provincia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carnet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categorias.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direcciones.Provincia)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.EmpleadoID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.EmpleadoID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.EmpleadoID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<GestionContructora.Controllers.Direcciones>
+
+@{
+    ViewBag.Title = "Página Principal de Direcciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Página Principal de Direcciones</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva dirección", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Canton)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distrito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtrasSenas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Provincia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Canton)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distrito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtrasSenas)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.DireccionID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.DireccionID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.DireccionID })
+        </td>
+    </tr>
+}
+
+</table>

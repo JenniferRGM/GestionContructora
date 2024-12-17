@@ -1,0 +1,49 @@
+﻿@model GestionContructora.Controllers.Asignaciones
+
+@{
+    ViewBag.Title = "Eliminar Asignación";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Estas seguro de eliminar?</h3>
+<div>
+    <h4>Asignaciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaAsignacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaAsignacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleados.Carnet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleados.Carnet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proyectos.CodigoProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proyectos.CodigoProyecto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

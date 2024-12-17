@@ -1,0 +1,99 @@
+﻿@model GestionContructora.Controllers.Empleados
+
+@{
+    ViewBag.Title = "Página de detalles en empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles Empleados</h2>
+
+<div>
+    <h4>Empleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Carnet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carnet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categorias.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorias.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direcciones.Provincia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direcciones.Provincia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.EmpleadoID }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

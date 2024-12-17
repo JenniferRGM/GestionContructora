@@ -1,0 +1,57 @@
+﻿@model GestionContructora.Controllers.Direcciones
+
+@{
+    ViewBag.Title = "Página Eliminar Dirección";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar Dirección</h2>
+
+<h3>¿Estas seguro de eliminar la dirección?</h3>
+<div>
+    <h4>Direcciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provincia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Canton)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Canton)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distrito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distrito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtrasSenas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtrasSenas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

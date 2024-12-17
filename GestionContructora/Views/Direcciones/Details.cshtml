@@ -1,0 +1,51 @@
+﻿@model GestionContructora.Controllers.Direcciones
+
+@{
+    ViewBag.Title = "Página de detalles de Dirección";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles de direcciones</h2>
+
+<div>
+    <h4>Direcciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provincia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Canton)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Canton)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distrito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distrito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtrasSenas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtrasSenas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.DireccionID }) |
+    @Html.ActionLink("Volver", "Index")
+</p>
